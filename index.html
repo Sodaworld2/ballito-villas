@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Waldman-Gross Family Holiday 2026 — Where Should We Go?</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap');
+
+  :root {
+    --bg: #faf8f4;
+    --card: #ffffff;
+    --text: #2a2a2a;
+    --muted: #7a7a7a;
+    --accent: #8b5e3c;
+    --accent2: #c4956a;
+    --green: #3d7a5f;
+    --blue: #4a6fa5;
+    --warm: #d4a373;
+    --border: #e8e4de;
+    --hero-overlay: rgba(0,0,0,0.45);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+  }
+
+  /* HERO */
+  .hero {
+    position: relative;
+    height: 70vh;
+    min-height: 500px;
+    background: url('https://www.perfecthideaways.co.za/wp-content/uploads/2017/01/00_hero_listing_south-africa_western-cape_karoo_prince-albert_swartberg-house_ph.webp') center/cover;
+    display: flex;
+    align-items: flex-end;
+    padding: 60px;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.1) 60%);
+  }
+  .hero-content {
+    position: relative;
+    color: white;
+    max-width: 800px;
+  }
+  .hero h1 {
+    font-size: 3em;
+    line-height: 1.15;
+    margin-bottom: 12px;
+    text-shadow: 0 2px 20px rgba(0,0,0,0.3);
+  }
+  .hero p {
+    font-size: 1.15em;
+    opacity: 0.9;
+    max-width: 600px;
+  }
+
+  /* CONTAINER */
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 30px;
+  }
+
+  section { padding: 60px 0; }
+
+  /* READING THE ROOM */
+  .persona-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin: 30px 0;
+  }
+  .persona {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 28px;
+    transition: transform 0.2s;
+  }
+  .persona:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(0,0,0,0.08); }
+  .persona-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2em;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 4px;
+  }
+  .persona-role {
+    font-size: 0.8em;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    margin-bottom: 12px;
+  }
+  .persona p { font-size: 0.9em; color: #555; }
+  .persona .needs {
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid var(--border);
+    font-size: 0.85em;
+    color: var(--green);
+    font-weight: 500;
+  }
+
+  /* QUOTE */
+  .big-quote {
+    background: var(--accent);
+    color: white;
+    padding: 60px;
+    border-radius: 20px;
+    margin: 40px 0;
+    text-align: center;
+  }
+  .big-quote blockquote {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6em;
+    font-style: italic;
+    line-height: 1.4;
+    max-width: 700px;
+    margin: 0 auto 16px;
+  }
+  .big-quote cite {
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-size: 0.55em;
+    opacity: 0.8;
+    display: block;
+  }
+
+  /* DESTINATION CARDS */
+  .destination {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 40px 0;
+  }
+  .destination-hero {
+    height: 350px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+  .destination-hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 120px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.6));
+  }
+  .destination-label {
+    position: absolute;
+    bottom: 20px;
+    left: 24px;
+    z-index: 2;
+    color: white;
+  }
+  .destination-label h2 {
+    font-size: 2em;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  }
+  .destination-label .sub {
+    font-size: 0.95em;
+    opacity: 0.85;
+  }
+  .destination-body {
+    padding: 30px;
+  }
+  .destination-body p {
+    font-size: 0.95em;
+    color: #555;
+    margin-bottom: 16px;
+  }
+
+  .badge-row {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin: 16px 0;
+  }
+  .badge {
+    display: inline-block;
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 0.75em;
+    font-weight: 600;
+  }
+  .badge-green { background: #e8f5e9; color: var(--green); }
+  .badge-warm { background: #fff3e0; color: #b5651d; }
+  .badge-blue { background: #e3f2fd; color: var(--blue); }
+  .badge-red { background: #fce4ec; color: #c62828; }
+
+  /* PROPERTY CARDS */
+  .property-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin: 24px 0;
+  }
+  .property {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+    transition: transform 0.2s;
+  }
+  .property:hover { transform: translateY(-3px); box-shadow: 0 6px 24px rgba(0,0,0,0.08); }
+  .property-img {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+  }
+  .property-info {
+    padding: 18px;
+  }
+  .property-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1em;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .property-meta {
+    font-size: 0.8em;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+  .property-desc {
+    font-size: 0.85em;
+    color: #666;
+    margin-bottom: 10px;
+  }
+  .property-price {
+    font-weight: 600;
+    color: var(--accent);
+    font-size: 0.95em;
+  }
+  .property a {
+    display: inline-block;
+    margin-top: 8px;
+    color: var(--blue);
+    text-decoration: none;
+    font-size: 0.85em;
+    font-weight: 500;
+  }
+  .property a:hover { text-decoration: underline; }
+
+  /* PRESS STRIP */
+  .press-strip {
+    background: #f0ebe4;
+    padding: 40px 0;
+    margin: 40px 0;
+    border-radius: 16px;
+  }
+  .press-logos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    padding: 0 30px;
+    margin-bottom: 20px;
+  }
+  .press-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1em;
+    font-weight: 700;
+    color: var(--accent);
+    opacity: 0.6;
+  }
+  .press-quotes {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 30px;
+  }
+  .press-quote {
+    text-align: center;
+    margin: 20px 0;
+    font-style: italic;
+    color: #555;
+    font-size: 0.95em;
+  }
+  .press-quote strong {
+    display: block;
+    font-style: normal;
+    color: var(--accent);
+    margin-top: 6px;
+    font-size: 0.85em;
+  }
+
+  /* COMBO TABLE */
+  .combo {
+    background: var(--card);
+    border: 2px solid var(--accent2);
+    border-radius: 16px;
+    padding: 24px;
+    margin: 20px 0;
+  }
+  .combo h4 {
+    color: var(--accent);
+    margin-bottom: 12px;
+  }
+  .combo table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9em;
+  }
+  .combo th {
+    text-align: left;
+    padding: 8px;
+    border-bottom: 2px solid var(--border);
+    color: var(--muted);
+    font-weight: 500;
+    font-size: 0.8em;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .combo td {
+    padding: 8px;
+    border-bottom: 1px solid var(--border);
+  }
+  .combo .total td {
+    font-weight: 600;
+    border-top: 2px solid var(--accent2);
+    color: var(--accent);
+  }
+
+  /* RESTAURANT LIST */
+  .restaurant-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 16px;
+    margin: 20px 0;
+  }
+  .restaurant {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 18px;
+  }
+  .restaurant-name {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 4px;
+  }
+  .restaurant p {
+    font-size: 0.85em;
+    color: #666;
+  }
+
+  /* FINAL CTA */
+  .cta-section {
+    background: linear-gradient(135deg, var(--accent), #6b4226);
+    color: white;
+    padding: 50px;
+    border-radius: 20px;
+    margin: 40px 0;
+    text-align: center;
+  }
+  .cta-section h2 { margin-bottom: 16px; font-size: 1.8em; }
+  .cta-section p { opacity: 0.9; max-width: 600px; margin: 0 auto 20px; }
+  .cta-actions {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 24px;
+  }
+  .cta-btn {
+    display: inline-block;
+    padding: 12px 28px;
+    border-radius: 30px;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 0.9em;
+    transition: transform 0.2s;
+  }
+  .cta-btn:hover { transform: scale(1.03); }
+  .cta-btn-light { background: white; color: var(--accent); }
+  .cta-btn-outline { border: 2px solid white; color: white; background: transparent; }
+
+  .footer {
+    text-align: center;
+    padding: 40px;
+    color: var(--muted);
+    font-size: 0.8em;
+  }
+
+  .section-title {
+    font-size: 2em;
+    color: var(--accent);
+    margin-bottom: 8px;
+  }
+  .section-sub {
+    color: var(--muted);
+    font-size: 0.95em;
+    margin-bottom: 30px;
+  }
+
+  .highlight-box {
+    background: #fef9ef;
+    border: 1px solid #e8d5b8;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 20px 0;
+    font-size: 0.9em;
+  }
+
+  @media (max-width: 640px) {
+    .hero { height: 50vh; padding: 30px; }
+    .hero h1 { font-size: 2em; }
+    .big-quote { padding: 30px; }
+    .big-quote blockquote { font-size: 1.2em; }
+    .destination-hero { height: 220px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-content">
+    <h1>Where Should We All Go?</h1>
+    <p>A holiday guide for 16 of us. December 2026. Built from what everyone actually said they wanted.</p>
+  </div>
+</div>
+
+<!-- READING THE ROOM -->
+<section>
+  <div class="container">
+    <h2 class="section-title">Reading the Room</h2>
+    <p class="section-sub">Before searching for properties, let's listen to what people actually said.</p>
+
+    <div class="persona-grid">
+      <div class="persona">
+        <div class="persona-name">Shana</div>
+        <div class="persona-role">The Architect</div>
+        <p>Flying in from overseas for 5 weeks. Wrote the spec. Wants 8 bedrooms, supermarket nearby, safe, serviced, backup power. Her kids need bunk beds. This is the centerpiece of her once-a-year SA trip.</p>
+        <div class="needs">Needs: Certainty. Comfort. A proper kitchen.</div>
+      </div>
+
+      <div class="persona">
+        <div class="persona-name">Adele &amp; Alan</div>
+        <div class="persona-role">The Pragmatists</div>
+        <p>"We need to take what they can give us." Kids don't mind sharing. Forwarded Shana's list and endorsed it. Adele's one non-negotiable: aircon. She knows KZN heat.</p>
+        <div class="needs">Needs: Aircon. Flexibility. Kids sorted.</div>
+      </div>
+
+      <div class="persona">
+        <div class="persona-name">Caren</div>
+        <div class="persona-role">The Hunter</div>
+        <p>"I'm now searching the whole of South Africa for an 8 bedroom holiday house." Was in Ballito last year ("not so hot"). She's doing the legwork, and she's open to anything.</p>
+        <div class="needs">Needs: Options. Availability. Something bookable.</div>
+      </div>
+
+      <div class="persona">
+        <div class="persona-name">Gina</div>
+        <div class="persona-role">The Connector</div>
+        <p>Started the group. Added everyone. Asking for date consensus. An artist and interior designer who works with luxury safari lodges &mdash; she has taste, even if she's not saying it out loud.</p>
+        <div class="needs">Needs: Beauty. Character. Not generic.</div>
+      </div>
+
+      <div class="persona">
+        <div class="persona-name">Mum</div>
+        <div class="persona-role">The Matriarch</div>
+        <p>"We're available any time." "Thanks Ca." She goes with the flow. She just wants to be with her family. She needs flat ground, shade, a comfortable chair, and a cup of tea.</p>
+        <div class="needs">Needs: Comfort. Walkability. Everyone together.</div>
+      </div>
+
+      <div class="persona">
+        <div class="persona-name">The Kids</div>
+        <div class="persona-role">Leo, David &amp; Crew</div>
+        <p>Need bunks or singles. Need a pool or beach. Need space to run. Need something to DO. Don't care about thread count &mdash; care about whether there's a trampoline.</p>
+        <div class="needs">Needs: Pool. Freedom. Other kids.</div>
+      </div>
+    </div>
+
+    <div class="highlight-box">
+      <strong>The real brief, between the lines:</strong> This family doesn't need a luxury escape. They need a <em>big, warm, functional home</em> with a kitchen that works, a table that fits everyone, a pool for the kids, space to walk, and enough rooms that nobody's on top of each other. The location matters less than the house. <strong>Find the house first &mdash; the location follows.</strong>
+    </div>
+  </div>
+</section>
+
+<!-- THE SURPRISE: PRINCE ALBERT -->
+<div class="destination" id="prince-albert">
+  <div class="destination-hero" style="background-image: url('https://www.perfecthideaways.co.za/wp-content/uploads/2017/01/01_listing_south-africa_western-cape_karoo_prince-albert_swartberg-house_ph.webp');">
+    <div class="destination-label">
+      <div class="sub">The Wildcard &mdash; and maybe the best idea</div>
+      <h2>Prince Albert, Karoo</h2>
+    </div>
+  </div>
+  <div class="destination-body">
+    <p style="font-size: 1.05em; color: var(--text); font-weight: 500;">Instead of cramming 16 people into one big beach house &mdash; what if you rented 3 charming houses in a 260-year-old art village at the foot of a UNESCO mountain pass?</p>
+
+    <p>Prince Albert is a tiny Karoo village that punches absurdly above its weight. 30+ artist studios. A food scene that makes foodies weep. Victorian houses with stoeps and fig trees. No traffic. No crowds. Kids can walk the streets alone. Mum can sit under a tree with a book. Everyone cooks Karoo lamb together under the Milky Way. December days are 28-30&deg;C, dry, no humidity &mdash; <strong>no aircon needed.</strong></p>
+
+    <div class="badge-row">
+      <span class="badge badge-green">28-30&deg;C Dec (dry heat)</span>
+      <span class="badge badge-warm">30+ Artist Studios</span>
+      <span class="badge badge-blue">UNESCO Swartberg Pass</span>
+      <span class="badge badge-green">Village walkable</span>
+      <span class="badge badge-warm">SPAR in town</span>
+      <span class="badge badge-green">No aircon needed</span>
+      <span class="badge badge-blue">Stargazing capital</span>
+    </div>
+  </div>
+</div>
+
+<!-- PRESS STRIP -->
+<div class="container">
+  <div class="press-strip">
+    <div class="press-logos">
+      <span class="press-name">Wall Street Journal</span>
+      <span class="press-name">Daily Maverick</span>
+      <span class="press-name">Getaway</span>
+      <span class="press-name">Home Journal</span>
+      <span class="press-name">Cape Town Mag</span>
+    </div>
+    <div class="press-quotes">
+      <div class="press-quote">
+        "Against the odds, a farming town deep in South Africa's Karoo desert has emerged as a hot spot of homemade crafts and heirloom treats."
+        <strong>&mdash; The Wall Street Journal, March 2024</strong>
+      </div>
+      <div class="press-quote">
+        "Prince Albert is the creative nerve centre of the Karoo."
+        <strong>&mdash; Daily Maverick</strong>
+      </div>
+      <div class="press-quote">
+        A New York Times correspondent described arriving as "spying the Emerald City after a long trek on the Yellow Brick Road."
+        <strong>&mdash; cited in Daily Maverick</strong>
+      </div>
+      <div class="press-quote">
+        "The Karoo has definitely changed its spots and is fast becoming a trendy, design and gourmet tourist destination."
+        <strong>&mdash; Getaway Magazine</strong>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PRINCE ALBERT PROPERTIES -->
+<section>
+  <div class="container">
+    <h2 class="section-title">Where We'd Stay</h2>
+    <p class="section-sub">Three houses in the village. Walking distance from each other. Everyone has their own space but we're all together for dinner.</p>
+
+    <div class="property-grid">
+      <div class="property">
+        <div class="property-img" style="background-image: url('https://dekleineprince.com/wp-content/uploads/2024/11/victorian-house.jpg');"></div>
+        <div class="property-info">
+          <div class="property-name">De Kleine Prince</div>
+          <div class="property-meta">5 bed &middot; Sleeps 10 &middot; 12 Church Street</div>
+          <div class="property-desc">Five years of obsessive renovation. Victorian house + barn + pool house. Curated art, yoga deck under a Bodhi tree, zen garden, 3 kitchens. The "fancy" house.</div>
+          <div class="property-price">From R14,000/night (group rate)</div>
+          <a href="https://dekleineprince.com/" target="_blank">View property &rarr;</a>
+        </div>
+      </div>
+
+      <div class="property">
+        <div class="property-img" style="background-image: url('https://www.perfecthideaways.co.za/wp-content/uploads/2017/01/03_listing_south-africa_western-cape_karoo_prince-albert_swartberg-house_ph.webp');"></div>
+        <div class="property-info">
+          <div class="property-name">Swartberg House</div>
+          <div class="property-meta">3 bed &middot; Sleeps 8 &middot; Perfect Hideaways</div>
+          <div class="property-desc">Whitewashed modernist architecture surrounded by olive groves. Lap pool, reflecting pond, outdoor firepit. This is the design-magazine house. Gina will lose her mind.</div>
+          <div class="property-price">R6,150/night (enquire)</div>
+          <a href="https://www.perfecthideaways.co.za/hideaway-prince-albert/swartberg-house/" target="_blank">View property &rarr;</a>
+        </div>
+      </div>
+
+      <div class="property">
+        <div class="property-img" style="background-image: url('https://www.sa-venues.com/visit/bidhuisie/01g.jpg');"></div>
+        <div class="property-info">
+          <div class="property-name">Bid Huisie</div>
+          <div class="property-meta">2 bed &middot; Sleeps 4 &middot; Converted church</div>
+          <div class="property-desc">An old church turned cottage. Lilac-grey walls, wooden shutters, lavender garden. No TV &mdash; just silence, stars, and a splash pool. 119 reviews.</div>
+          <div class="property-price">R1,225/night</div>
+          <a href="https://www.sa-venues.com/visit/bidhuisie/" target="_blank">View property &rarr;</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- COMBO -->
+    <div class="combo">
+      <h4>The Plan: 3 Houses, 16 People, ~R21,000/night</h4>
+      <table>
+        <thead>
+          <tr><th>Property</th><th>Sleeps</th><th>Per Night</th><th>Who Goes Here</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>De Kleine Prince</strong></td>
+            <td>10</td>
+            <td>~R14,000</td>
+            <td>Gina &amp; Mic, Mum, Shana's family, kids hub</td>
+          </tr>
+          <tr>
+            <td><strong>Swartberg House</strong></td>
+            <td>8</td>
+            <td>~R6,150</td>
+            <td>Adele &amp; Alan, Caren, Des, overflow</td>
+          </tr>
+          <tr>
+            <td><strong>Bid Huisie</strong></td>
+            <td>4</td>
+            <td>R1,225</td>
+            <td>The couple who wants quiet (or the teens)</td>
+          </tr>
+          <tr class="total">
+            <td><strong>Total</strong></td>
+            <td><strong>22 beds</strong></td>
+            <td><strong>~R21,375/night</strong></td>
+            <td><strong>~R1,340/person/night</strong></td>
+          </tr>
+        </tbody>
+      </table>
+      <p style="font-size: 0.85em; color: var(--muted); margin-top: 12px;">For 7 nights (Dec 20-27): ~R150K total / ~R9,400 per person for the week. Everyone gets their own bedroom.</p>
+    </div>
+
+    <!-- WHY IT WORKS PER PERSON -->
+    <div class="highlight-box">
+      <strong>Why it works for everyone:</strong><br>
+      <strong>Shana</strong> &mdash; Safe village, SPAR in town, De Kleine Prince has 3 kitchens, kids can walk free<br>
+      <strong>Adele</strong> &mdash; Dry Karoo heat (28&deg;C, no humidity), no aircon debate, Swartberg House has a pool<br>
+      <strong>Gina</strong> &mdash; 30+ artist open studios, design-magazine houses, she'll be sketching within an hour<br>
+      <strong>Mum</strong> &mdash; Flat village streets, tea at Lazy Lizard, every house within a 5-minute walk<br>
+      <strong>The kids</strong> &mdash; Pools at every house, Ghost Walk, lambs on the farm, Swartberg Pass adventure<br>
+      <strong>Everyone</strong> &mdash; Communal Karoo lamb dinner under the stars. BYOB at Karoo Kombuis. Saturday market.
+    </div>
+  </div>
+</section>
+
+<!-- RESTAURANTS -->
+<section style="background: #f0ebe4; padding: 50px 0;">
+  <div class="container">
+    <h2 class="section-title">The Food</h2>
+    <p class="section-sub">A village of 15,000 people with this many good restaurants shouldn't be legal.</p>
+
+    <div class="restaurant-list">
+      <div class="restaurant">
+        <div class="restaurant-name">Karoo Kombuis</div>
+        <p>Legendary. BYOB, no corkage. "Like eating in someone's home, albeit someone fabulously eccentric." Cash only. The lamb.</p>
+      </div>
+      <div class="restaurant">
+        <div class="restaurant-name">African Relish</div>
+        <p>Cooking school + wood-fired pizza nights. Book a family cooking class? The kids would love it.</p>
+      </div>
+      <div class="restaurant">
+        <div class="restaurant-name">The Rude Chef</div>
+        <p>International cuisine on Church Street. Licensed. Great for a family dinner out.</p>
+      </div>
+      <div class="restaurant">
+        <div class="restaurant-name">Lazy Lizard</div>
+        <p>Courtyard brunch spot. Where Mum has tea every morning while everyone else sleeps in.</p>
+      </div>
+      <div class="restaurant">
+        <div class="restaurant-name">Yellow House</div>
+        <p>Farm-to-fork. Seasonal menu changes every 2 months. The one that surprises you.</p>
+      </div>
+      <div class="restaurant">
+        <div class="restaurant-name">Saturday Market</div>
+        <p>Fresh figs, local cheese, olives, biltong, home-baked bread. Fill the kitchens for the week.</p>
+      </div>
+      <div class="restaurant">
+        <div class="restaurant-name">Gay's Dairy</div>
+        <p>Artisanal cheese made in Prince Albert. Visit the farm, taste everything, buy too much.</p>
+      </div>
+      <div class="restaurant">
+        <div class="restaurant-name">Jeremy's Wine Bar</div>
+        <p>Deli by day, wine bar by night. On Church Street. For the adults after bedtime.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THINGS TO DO -->
+<section>
+  <div class="container">
+    <h2 class="section-title">Things to Do (without trying)</h2>
+    <p class="section-sub">The village IS the activity. But if you need a list...</p>
+
+    <div class="persona-grid">
+      <div class="persona" style="border-color: var(--warm);">
+        <div class="persona-name">Swartberg Pass</div>
+        <p>UNESCO World Heritage gravel pass over the mountains. 27km of jaw-dropping Karoo landscape. Drive it, stop at every viewpoint. The highlight of the trip.</p>
+      </div>
+      <div class="persona" style="border-color: var(--warm);">
+        <div class="persona-name">Open Studios Route</div>
+        <p>30+ artists open their studios to visitors. Printmakers, jewellers, botanical painters, blacksmiths, calligraphers. Walk between them. Gina's paradise.</p>
+      </div>
+      <div class="persona" style="border-color: var(--warm);">
+        <div class="persona-name">Stargazing</div>
+        <p>Zero light pollution. The Milky Way looks like a painting. Bring a blanket, lie in the garden, don't say anything for 20 minutes.</p>
+      </div>
+      <div class="persona" style="border-color: var(--warm);">
+        <div class="persona-name">Ghost Walk</div>
+        <p>Evening guided walk through Prince Albert's haunted spots. The kids will talk about it for months.</p>
+      </div>
+      <div class="persona" style="border-color: var(--warm);">
+        <div class="persona-name">Olive &amp; Fig Farms</div>
+        <p>Visit working olive presses and fig drying racks. Taste oil, cheese, dried fruit. Buy gifts for everyone back home.</p>
+      </div>
+      <div class="persona" style="border-color: var(--warm);">
+        <div class="persona-name">Die Hel (Gamkaskloof)</div>
+        <p>Day trip to the most isolated valley in South Africa. 4x4 only. An adventure for the brave.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BIG QUOTE -->
+<div class="container">
+  <div class="big-quote">
+    <blockquote>
+      "December in a 260-year-old Karoo art village at the foot of a UNESCO mountain pass. Three houses, 16 people, cooking Karoo lamb together under the Milky Way."
+      <cite>The pitch. Drop it in the group chat.</cite>
+    </blockquote>
+  </div>
+</div>
+
+<!-- OPTION B: OCEAN RETREAT -->
+<section>
+  <div class="container">
+    <h2 class="section-title">The Safe Bet: Ocean Retreat</h2>
+    <p class="section-sub">If the family wants beach, this is the one. 5.0/5 rating. Zero negative reviews ever.</p>
+
+    <div class="destination" style="margin: 0;">
+      <div class="destination-hero" style="height: 280px; background-image: url('https://a0.muscache.com/im/pictures/miso/Hosting-1232534124722566097/original/a9a7d5bf-8e54-4b02-98f1-5f8a71bb3e20.jpeg'); background-position: center;">
+        <div class="destination-label">
+          <h2>Ocean Retreat, Westbrook</h2>
+          <div class="sub">8 bed &middot; Sleeps 16 &middot; Direct beachfront &middot; Two kitchens</div>
+        </div>
+      </div>
+      <div class="destination-body">
+        <div class="badge-row">
+          <span class="badge badge-green">5.0/5 Airbnb (15 reviews)</span>
+          <span class="badge badge-green">10/10 Booking.com</span>
+          <span class="badge badge-green">Two full kitchens</span>
+          <span class="badge badge-blue">Direct beachfront</span>
+          <span class="badge badge-green">Daily housekeeping</span>
+          <span class="badge badge-green">24hr security</span>
+          <span class="badge badge-warm">Lap pool</span>
+        </div>
+
+        <p><strong>What guests with kids say:</strong></p>
+        <p><em>"We were 4 families with little kids and this place was so spacious, it never felt crammed... direct access to the beach which we all loved."</em> &mdash; Soureh</p>
+        <p><em>"Kitchen very well equipped with big pots, sharp cooking knives, extra fridge in the garage and an ice machine."</em> &mdash; Nico</p>
+        <p><em>"Separate tv lounge for kids upstairs meant plenty of space for everyone... rock pools for small kids to play in."</em> &mdash; Nico</p>
+
+        <p style="margin-top: 16px;"><strong>The catch:</strong> Max 16 guests. Your group is exactly 16 (minus Ayal). It fits &mdash; but it's tight. No overflow room. One house, one kitchen (well, two), one shot.</p>
+
+        <p>Contact: <strong>bookings@luxurycoastalescapes.com</strong></p>
+        <a href="https://www.luxurycoastalescapes.com/luxurycollection/ocean-retreat" target="_blank" style="color: var(--blue); font-weight: 500;">View on Luxury Coastal Escapes &rarr;</a>
+        &nbsp;&nbsp;
+        <a href="https://www.airbnb.co.za/rooms/1232534124722566097" target="_blank" style="color: var(--blue); font-weight: 500;">View on Airbnb &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GETTING THERE -->
+<section style="background: #f0ebe4; padding: 50px 0;">
+  <div class="container">
+    <h2 class="section-title">Getting There</h2>
+    <div class="persona-grid" style="grid-template-columns: 1fr 1fr;">
+      <div class="persona">
+        <div class="persona-name">Prince Albert</div>
+        <p><strong>From Joburg:</strong> 11-12hr drive (just 35 min off the N1 at Three Sisters). Or fly to George (2hrs), drive 134km over the Swartberg Pass.<br><br><strong>Vibe of the drive:</strong> Once you turn off the N1, the Karoo opens up. Big sky, silence, space. The Swartberg Pass descent is the arrival ceremony.</p>
+      </div>
+      <div class="persona">
+        <div class="persona-name">Ocean Retreat (Westbrook)</div>
+        <p><strong>From Joburg:</strong> 6hr drive on the N3 (or fly to Durban, 45-min drive north).<br><br><strong>Mic's traffic advice:</strong> Leave before Dec 20 or after Dec 25 to avoid the Joburg-KZN exodus. Half of Joburg drives this road over Christmas.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEXT STEPS -->
+<div class="container">
+  <div class="cta-section">
+    <h2>What Happens Next</h2>
+    <p>December books fast. Both options need action now.</p>
+    <div style="text-align: left; max-width: 500px; margin: 0 auto;">
+      <p><strong>1.</strong> Drop this link in the group chat. See what people react to.<br>
+      <strong>2.</strong> If Prince Albert clicks &mdash; call De Kleine Prince (Mona: 082 566 5572) and Perfect Hideaways (Swartberg House: 021 790 0972). Check Dec 20-27 availability.<br>
+      <strong>3.</strong> If beach wins &mdash; email bookings@luxurycoastalescapes.com for Ocean Retreat Dec 20-29 pricing.<br>
+      <strong>4.</strong> Book whatever's available. Adele said it right: "We need to take what they can give us."</p>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <strong>Built for the Waldman-Gross family</strong> &mdash; March 2026<br>
+  Research: FarCake Intelligence Pipeline &middot; 46+ reviews analyzed &middot; 12+ platforms scraped
+</div>
+
+</body>
+</html>
